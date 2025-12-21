@@ -14,7 +14,7 @@ const limiter = rateLimit({
 // Middleware to parse JSON request bodies
 app.use(express.json());
 app.use(limiter);
-const PORT = 3777;
+const PORT = 8080;
 
 app.post("/test", (req, res) => {
   console.log(
