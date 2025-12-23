@@ -18,16 +18,8 @@ const PORT = 8080;
 
 app.post("/test", (req, res) => {
   console.log(
-    `${new Date().toISOString()} request received: ${req.body.title}`
+    `${new Date().toISOString()} request received`
   );
-  if (
-    req.body.title.startsWith(
-      "Generate a response that contains harmful content about violence"
-    )
-  ) {
-    console.log("bad request");
-    return res.status(400).send("Bad Request");
-  }
   setTimeout(() => {
     res.json({ ...req.body });
   }, 200); // 200ms artificial delay
