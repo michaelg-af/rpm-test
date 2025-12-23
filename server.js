@@ -3,8 +3,8 @@ const app = express();
 const { rateLimit } = require("express-rate-limit");
 
 const limiter = rateLimit({
-  windowMs: 1 * 1000,
-  limit: 1,
+  windowMs: 60 * 1000,
+  limit: 60,
   handler: (req, res, next, options) => {
     console.log("rate limit exceeded");
     res.status(options.statusCode).send(options.message);
